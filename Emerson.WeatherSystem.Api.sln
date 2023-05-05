@@ -13,13 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C5C3B944-8
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{B2FAA9FA-3B29-47C3-BDC1-F032A98752E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerson.WeatherSystem.Application.UnitTest", "Emerson.WeatherSystem.Application.UnitTest\Emerson.WeatherSystem.Application.UnitTest.csproj", "{7DA5BB7B-6A18-4549-BC83-5467434F1C2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emerson.WeatherSystem.Application.UnitTest", "Emerson.WeatherSystem.Application.UnitTest\Emerson.WeatherSystem.Application.UnitTest.csproj", "{7DA5BB7B-6A18-4549-BC83-5467434F1C2F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerson.WeatherSystem.Application", "Emerson.WeatherSystem.Application\Emerson.WeatherSystem.Application.csproj", "{C567F8CC-A0D3-4FFC-8A70-0B441DFBE76C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emerson.WeatherSystem.Application", "Emerson.WeatherSystem.Application\Emerson.WeatherSystem.Application.csproj", "{C567F8CC-A0D3-4FFC-8A70-0B441DFBE76C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerson.WeatherSystem.Domain", "Emerson.WeatherSystem.Domain\Emerson.WeatherSystem.Domain.csproj", "{5D95AD3F-7005-482C-AACF-FD760B1252C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emerson.WeatherSystem.Domain", "Emerson.WeatherSystem.Domain\Emerson.WeatherSystem.Domain.csproj", "{5D95AD3F-7005-482C-AACF-FD760B1252C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerson.WeatherSystem.Persistence", "Emerson.WeatherSystem.Persistence\Emerson.WeatherSystem.Persistence.csproj", "{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emerson.WeatherSystem.Persistence", "Emerson.WeatherSystem.Persistence\Emerson.WeatherSystem.Persistence.csproj", "{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emerson.WeatherSystem.Api", "Emerson.WeatherSystem.Api\Emerson.WeatherSystem.Api.csproj", "{B8761781-62EB-427F-8BAC-8E1947A6874F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8761781-62EB-427F-8BAC-8E1947A6874F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8761781-62EB-427F-8BAC-8E1947A6874F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8761781-62EB-427F-8BAC-8E1947A6874F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8761781-62EB-427F-8BAC-8E1947A6874F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{C567F8CC-A0D3-4FFC-8A70-0B441DFBE76C} = {C5C3B944-8E29-491E-A3E9-F48F42B2DB32}
 		{5D95AD3F-7005-482C-AACF-FD760B1252C9} = {C5C3B944-8E29-491E-A3E9-F48F42B2DB32}
 		{97E50F4C-C75A-40A0-A9C1-3E954FBFB56A} = {B2FAA9FA-3B29-47C3-BDC1-F032A98752E9}
+		{B8761781-62EB-427F-8BAC-8E1947A6874F} = {547358B8-AE85-4512-BDB8-4C112B2A6EA7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B743A405-6E69-4A28-982A-4FFBC101ECD1}

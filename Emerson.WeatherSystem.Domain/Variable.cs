@@ -11,8 +11,9 @@ namespace Emerson.WeatherSystem.Domain
     {
         public string Name { get; set; } = String.Empty;
         public string Unit { get; set; } = String.Empty;
-        public Decimal Value { get; set; }
-        public DateTime TimeStamp { get; set; }
+        public string Value { get; set; } = String.Empty;
+        public DateTimeOffset TimeStamp { get; set; }
         public int CityId { get; set; }
+        public City City { get; set; } = new City();
     }
 }
