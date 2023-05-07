@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Emerson.WeatherSystem.Application.Contracts.Persistence;
 using Emerson.WeatherSystem.Application.Dtos;
+using Emerson.WeatherSystem.Application.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,18 @@ namespace Emerson.WeatherSystem.Application.Features.Queries
         }
         public async Task<List<VariableDto>> Handle(GetVariablesQuery request, CancellationToken cancellationToken)
         {
+            // Simple validation, for more complex validation will go with FluentValidation
+            if(string.IsNullOrEmpty(request.VariableName) || string.IsNullOrEmpty(request.CityName))
+            {
+                throw new BadRequestException("GetVariablesQueryErrors", "Invalid get variable request, Variable and City name must not be empty.");
+            }
+
             var result = await _variableRepository.GetVariablesAsync(request);
+
+            if(result == null || result.Count() == 0)
+            {
+                throw new NotFoundException(nameof(List<VariableDto>), result);
+            }
 
             var dtos = _mapper.Map<List<VariableDto>>(result);
 

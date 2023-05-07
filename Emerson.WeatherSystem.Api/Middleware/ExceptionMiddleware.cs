@@ -39,7 +39,7 @@ namespace Emerson.WeatherSystem.Api.Middleware
                         Status = (int)statusCode,
                         Detail = badRequestException.InnerException?.Message,
                         Type = nameof(BadRequestException),
-                        Errors = badRequestException.Errors
+                        Errors = badRequestException.ValidationErrors
                     };
                     break;
                 case NotFoundException NotFound:

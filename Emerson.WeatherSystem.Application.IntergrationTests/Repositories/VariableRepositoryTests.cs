@@ -51,6 +51,18 @@ namespace Emerson.WeatherSystem.Application.UnitTest.Features.Queries
             variables.ShouldBeOfType<List<Variable>>();
             variables.Count().ShouldBe(7);
 
+
+            GetVariablesQuery query2 = new GetVariablesQuery();
+            query.CityName = "";
+            query.VariableName = "";
+            query.StartTimeStamp = DateTimeOffset.Parse("2023-01-02T00:00:00.0000000+00:00");
+            query.EndTimeStamp = DateTimeOffset.Parse("2023-01-08T00:00:00.0000000+00:00");
+
+            var variables2 = await _IVariableRepository.GetVariablesAsync(query2);
+
+            variables2.ShouldBeOfType<List<Variable>>();
+            variables2.Count().ShouldBe(0);
+
         }
     }
 }

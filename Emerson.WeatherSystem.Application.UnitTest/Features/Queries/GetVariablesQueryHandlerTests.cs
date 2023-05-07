@@ -36,7 +36,11 @@ namespace Emerson.WeatherSystem.Application.UnitTest.Features.Queries
         {
             var handler = new GetVariablesQueryHandler(_mockRepo.Object, _mapper);
 
-            var result = await handler.Handle(new GetVariablesQuery(), CancellationToken.None);
+            var query = new GetVariablesQuery();
+            query.CityName = "Singapore";
+            query.VariableName = "Temperature";
+
+            var result = await handler.Handle(query, CancellationToken.None);
             /*
             var testing = await _mockRepo.Object.GetAllAsync();
             Console.WriteLine(testing);

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Emerson.WeatherSystem.Application.Contracts.Persistence;
 using Emerson.WeatherSystem.Application.Dtos;
+using Emerson.WeatherSystem.Application.Exceptions;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,11 @@ namespace Emerson.WeatherSystem.Application.Features.Queries
         public async Task<MoistestCityDto> Handle(GetMoistestCityQuery request, CancellationToken cancellationToken)
         {
             var result = await _cityRepository.GetMoistestCityAsync();
+
+            if (result == null)
+            {
+                throw new NotFoundException(nameof(MoistestCityDto), request);
+            }
 
             return result;
         }
