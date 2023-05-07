@@ -11,6 +11,6 @@ namespace Emerson.WeatherSystem.Application.Contracts.Persistence
 {
     public interface IVariableRepository : IGenericRepository<Variable>
     {
-        Task<IEnumerable<Variable>> GetVariables(GetVariablesQuery query);
+        Task<IEnumerable<Variable>> GetVariablesAsync(GetVariablesQuery query);
     }
 }

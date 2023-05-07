@@ -18,12 +18,12 @@ namespace Emerson.WeatherSystem.Persistence.Repositories
         {
         }
 
-        public async Task<IEnumerable<Variable>> GetVariables(GetVariablesQuery query)
+        public async Task<IEnumerable<Variable>> GetVariablesAsync(GetVariablesQuery query)
         {
             var variables =  await _context.Variables
                 .Include(z => z.City)
-                .Where(w => string.Equals(w.Name, query.VariableName, StringComparison.OrdinalIgnoreCase) 
-                    && string.Equals(w.City.CityName, query.CityName, StringComparison.OrdinalIgnoreCase)
+                .Where(w => string.Equals(w.Name, query.VariableName) 
+                    && string.Equals(w.City.CityName, query.CityName)
                     && query.StartTimeStamp <= w.TimeStamp && w.TimeStamp <= query.EndTimeStamp)
                 .AsNoTracking()
                 .ToListAsync();

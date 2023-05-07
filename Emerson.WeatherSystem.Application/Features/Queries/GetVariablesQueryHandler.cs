@@ -24,7 +24,8 @@ namespace Emerson.WeatherSystem.Application.Features.Queries
         }
         public async Task<List<VariableDto>> Handle(GetVariablesQuery request, CancellationToken cancellationToken)
         {
-            var result = await _variableRepository.GetVariables(request);
+            var result = await _variableRepository.GetVariablesAsync(request);
+
             var dtos = _mapper.Map<List<VariableDto>>(result);
 
             return dtos;

@@ -15,7 +15,8 @@ namespace Emerson.WeatherSystem.Application.MappingProfiles
         public WeatherSystemProfile() 
         {
             CreateMap<CityDto, City>().ReverseMap();
-            CreateMap<VariableDto, Variable>().ReverseMap();
+            CreateMap<Variable, VariableDto>()
+                .ForMember(d => d.CityName, d => d.MapFrom(s => s.City.CityName));
         }
     }
 }
